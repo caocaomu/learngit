@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Component-1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../assets/js/vue.js">
+    </script>
+    
+</head>
+<body>
+    <h1>Component-1</h1>
+    <hr>
+    <div id="app">
+      
+         <panda></panda>
+    </div>
+  
+    <script type="text/javascript">
+            var city={
+               template:`<div style="color:red;">SiChuan of China</div>`
+           }
+           var pandaComponent={//构造器外声明局部组件
+               template:`  //父组件
+               <div>
+                <p>Panda from China</p>
+                <city></city>
+                </div>
+               `,
+               components:{//子组件
+                   "city":city
+               }
+           }
+          
+           var app=new Vue({//构造器
+               el:'#app',
+               components:{
+                   "panda":pandaComponent
+               }
+           })
+        //    var ppa=new Vue({
+        //        el:'#ppa',
+        //    })
+    </script>
+</body>
+</html>

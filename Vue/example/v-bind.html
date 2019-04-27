@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>v-bind实例</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../assets/js/vue.js">
+    </script>
+    
+</head>
+<body>
+    <h1>v-bind实例</h1>
+    <h2>v-bind是处理HTML中的标签属性的</h2>
+    <hr>
+    <div id="app">
+      <p><img v-bind:src="imgSrc" width="200px"/></p> 
+      <p><a :href="webUrl" target="_blank">Lyy</a></p>
+      <hr>
+      <div :class="className">1.绑定Class</div>
+      <div :class="{classA:isOk}">2.绑定Class中的判断</div>
+      <div :class="[classA,classB]">3.绑定Class中的数组</div>
+      <div :class="isOk?classA:classB">4.绑定Class中的三元运算符</div>
+      
+      <hr>
+      <div>
+           
+          <input type="checkbox" id="isOk" v-model="isOk">
+          <label for="isOk">isOk={{isOk}}</label>
+      </div>
+      <hr>
+      <div :style="{color:red,fontSize:font}">5.绑定style</div>
+      <div :style=" styleObject">6.对象绑定style</div>
+      
+    </div>
+    <style>
+      .classA{
+          color:red;
+
+      }
+      .classB{
+         font-size: 20pt
+      }
+    </style>
+    <script type="text/javascript">
+           var app=new Vue({
+               el:'#app',
+               data:{
+                  imgSrc:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1888333013,2441326225&fm=27&gp=0.jpg',
+                  webUrl:"https://github.com/caocaomu/learngit",
+                  className:'classA',
+                  isOk:true,
+                 classA:'classA',
+                 classB:'classB',
+                 red:'red',
+                 font:'20px',
+                 styleObject:{
+                     color:'green',
+                     fontSize:'24px'
+                 }
+               }
+           })
+    </script>
+</body>
+</html>

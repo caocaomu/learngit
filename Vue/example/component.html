@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Component-1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../assets/js/vue.js">
+    </script>
+    
+</head>
+<body>
+    <h1>Component-1</h1>
+    <hr>
+    <div id="app">
+         <lyy></lyy>
+         <panda></panda>
+    </div>
+    <!-- <div id="ppa">
+        <lyy></lyy>
+
+    </div> -->
+    <!-- <lyy></lyy> component在此次是不管用的-->
+    <script type="text/javascript">
+           Vue.component('lyy',{ //只能定义一个组件
+               template:`<div style="color:red">我是全局的lyy组件</div>`
+           })
+           var app=new Vue({
+               el:'#app',
+               components:{//能定义多个组件
+                "panda":{
+                    template:`<div style="color:green">我是局部的panda组件</div>`
+                }
+
+               }
+           })
+        //    var ppa=new Vue({
+        //        el:'#ppa',
+        //    })
+    </script>
+</body>
+</html>

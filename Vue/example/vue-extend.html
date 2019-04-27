@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Vue-extend 扩展实例构造器</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../assets/js/vue.js">
+    </script>
+    
+</head>
+<body>
+    <h1>Vue-extend 扩展实例构造器</h1>
+    <hr>
+    <div id="author"></div>
+    <author></author>
+    <script type="text/javascript">
+          var authorURL=Vue.extend({
+            template:"<p><a :href='authorURL'>{{authorName}}</a></p>",//标签上的属性都需要绑定
+            data:function(){
+                return{
+                    authorName:'Lyiyi',
+                    authorURL:"https://www.baidu.com/"
+                }
+            }
+          });
+          new authorURL().$mount("author");
+          new authorURL().$mount("#author");
+    </script>
+</body>
+</html>
